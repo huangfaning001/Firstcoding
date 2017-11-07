@@ -32,7 +32,7 @@ if salary.isdigit():
     salary = int(salary)
     while True:
         #打印商品内容
-        for i,v in enumerate(product_list,1):
+        for i,v in enumerate(product_list,1):#enumerate会将数组或列表组成一个索引序列,使我们再获取索引和索引内容的时候更加方便
             print(i,">>>>",v)
             #引导用户选择商品
         chioce = input("Please select the purchase ID[quit:q]：")
@@ -62,4 +62,44 @@ if salary.isdigit():
             print("Invalid input")
 else:
     print("Invalid input")
+
+# list_of_goods = [
+#     ('iphoneX',8888),
+#     ('macbook',9999),
+#     ('ipad',3333),
+#     ('python book',99),
+#     ('coffee',88),
+#     ('earphone',666)
+# ]
+#
+# wages = input("Please input your wages: ")
+# shopping_cart = []
+# if wages.isdigit():
+#     wages=int(wages)
+#     while True:
+#         for i,v in enumerate(list_of_goods,1):
+#             print(i,'>>>>',v)
+#             select = input('Please input product ID!![quit:q]: ')
+#             if select.isdigit():
+#                 select=int(select)
+#                 if select>0 and select <=len(list_of_goods):
+#                     p_item = list_of_goods[select-1]
+#                     if p_item[1] <= wages:
+#                         wages -=p_item[1]
+#                         shopping_cart.append(p_item)
+#                     else:
+#                         print("Your balance is insufficient")
+#                     print(p_item)
+#                 else:
+#                     print('Encoding does not exist')
+#             elif select =='q':
+#                 print('-----------You have purchased the following items--------------')
+#                 for i in shopping_cart:
+#                     print(i)
+#                 print('You still have %s RMB'%wages)
+#                 break
+#             else:
+#                 print('nvalid input')
+# else:
+#     print('nvalid input')
 
