@@ -11,19 +11,19 @@ menu = {
             '沙头':{'123'},
             '香蜜湖':{'123'},
             '梅林':{'123'},
-        }
-        "罗湖区":{
-            "黄贝":{'123'},
-            "东门":{'123'},
-            "南湖":{'123'},
-            "桂园":{'123'},
-            "笋岗":{'123'},
-            "清水河":{'123'},
-            "翠竹":{'123'},
-            "东湖":{'123'},
-            "东晓":{'123'},
-            "莲塘":{'123'},
-        }
+        },
+        '罗湖区':{
+            '黄贝':{'123'},
+            '东门':{'123'},
+            '南湖':{'123'},
+            '桂园':{'123'},
+            '笋岗':{'123'},
+            '清水河':{'123'},
+            '翠竹':{'123'},
+            '东湖':{'123'},
+            '东晓':{'123'},
+            '莲塘':{'123'},
+        },
         '南山区':{
             '南头':{'123'},
             '南山':{'123'},
@@ -33,13 +33,13 @@ menu = {
             '沙河':{'123'},
             '西丽':{'123'},
             '桃源':{'123'},
-        }
+        },
         '盐田区':{
             '沙头角':{'123'},
             '梅沙':{'123'},
             '盐田':{'123'},
             '海山':{'123'},
-        }
+        },
         '宝安区':{
             '新安':{'123'},
             '西乡':{'123'},
@@ -51,7 +51,7 @@ menu = {
             '石岩':{'123'},
             '观澜':{'123'},
             '龙华':{'123'},
-        }
+        },
         '龙岗区':{
             '布吉':{'123'},
             '坂田':{'123'},
@@ -66,8 +66,8 @@ menu = {
             '葵涌':{'123'},
             '大鹏':{'123'},
             '南澳':{'123'},
-        }
-    }
+        },
+    },
     '广州市':{
         '荔湾区':{'沙面''华林''多宝''昌华''逢源''龙津''金花''彩虹''南源''西村''站前''岭南''桥中'},
         '越秀区':{'洪桥''北京''六榕''流花''光塔''人民''东山''农林''大东''大塘街道''珠光''白云''建设''华乐''梅花村''黄花岗''矿泉''登峰'},
@@ -87,40 +87,47 @@ menu = {
             '良口镇':{},
             '吕田镇':{},
             '鳌头镇':{}
-        }
+        },
         '南沙区':{'南沙''龙穴''珠江''万顷沙镇''黄阁镇''横沥镇''榄核镇''大岗镇''东涌镇'},
     }
 }
 
 back_flag = False
-
+exit_flag = False
 while True:
-    while not back_flag:
+    while not back_flag and not exit_flag:
         for key in menu:
             print(key)
         choice = input(">>>:").strip()
         if choice in menu:
-            while not back_flag:
+            while not back_flag and not exit_flag:
                 for key2 in menu[choice]:
                     print(key2)
                 choice2 = input ("2>>>:").strip()
                 if choice2 == "b":
                     back_flag = True
+                if choice2 == "q":
+                    exit_flag = True
                 if choice2 in menu[choice]:
-                    while not back_flag:
+                    while not back_flag and not exit_flag:
                         for key3 in menu[choice][choice2]:
                             print(key3)
                         choice3 = input("3>>>:").strip()
                         if choice3 == "b":
                             back_flag = True
-                        if choice3 in menu[choice][choice2][choice3]:
-                            while not back_flag:
+                        if choice3 == "q":
+                            exit_flag = True
+                        if choice4 in menu[choice][choice2][choice3]:
+                            while not back_flag and not exit_flag:
                                 for key4 in menu[choice][choice2][choice3]:
                                     print(key4)
                                 choice4 = input("4>>>:").strip()
                                 print("last level")
                                 if choice4 == "b":
                                     back_flag = True
+                                if choice4 =="q":
+                                    exit_flag = True
+                                    break
                             else:
                                 back_flag = False
                     else:
