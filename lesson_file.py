@@ -18,13 +18,30 @@
 f = open('寄芸1','r',encoding = 'utf-8')
 # print(f.read(5))
 # print(f.read(5))
-num = 0
-for i in f.readlines():
-    num+=1
-    if num == 6:
-        i = ''.join((i.strip(),'123456'))#取代万恶的+
-    print(i.strip())
-f.close()
+# num = 0
+# for i in f.readlines():
+#     num+=1
+#     if num == 6:
+#         i = ''.join((i.strip(),'123456'))#取代万恶的+
+#     print(i.strip())
+# f.close()
+
+# num = 0
+# for i in f.readlines(): #这是for内部将f对象做成一个迭代器，用一行去一行
+#     if num == 6:
+#         i = ''.join([i.strip(), '78988'])
+#     print(i.strip())
+
+print(f.tell())
+print(f.read(3))
+print(f.tell())
+
+f.seek(0)
+print(f.read(4))
+
+
+
+
 # print(f.readline())
 # print(f.readline())
 
