@@ -41,3 +41,33 @@
 #     var 变量名
 #
 #     value 变量值
+
+
+# 命令帮助
+#
+# $man
+# command
+# 查询命令command的说明文档
+#
+# $man - k
+# keyword
+# 查询关键字
+#
+# $info
+# command
+# 更加详细的说明文档
+#
+# $whatis
+# command
+# 简要说明
+#
+# $which
+# command
+# command的binary文件所在路径
+#
+# $whereis
+# command
+# 在搜索路径中的所有command
+#
+# 这里只是以command(binary
+# file) 为例。比如man还可以用于查询系统函数、配置文件等。
