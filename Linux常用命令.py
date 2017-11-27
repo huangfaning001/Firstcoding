@@ -69,5 +69,4 @@
 # command
 # 在搜索路径中的所有command
 #
-# 这里只是以command(binary
-# file) 为例。比如man还可以用于查询系统函数、配置文件等。
+
