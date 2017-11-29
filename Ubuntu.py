@@ -100,3 +100,46 @@
 #  　　--永久修改：
 # 　　　　在/etc/sysctl.conf 文件里添加如下参数：
 # 　　　　vm.swappiness=10
+
+
+# 语言环境
+#
+# 查看是否安装了中文支持
+# locale -a
+# 如果有 zh_CN.utf8 则表示系统已经安装了中文locale，如果没有则需要安装相应的软件包。安装方式如下：
+# sudo apt-get install language-pack-zh-hans language-pack-zh-hans-base
+#
+#
+#
+# 软件管理 apt ( Advanced Packaging Tool ) , 他可以自动下载、配置、安装软件包；简化了Linux系统上的。Debian及衍生版中都包含了apt ， RedHat系列的linux的则使用yum来进行管理，其中Fedora22中Centos7中开始使用dnf 来替代yum。
+#
+# apt-cache search package 搜索包
+# apt-cache show package 获取包的相关信息，如说明、大小、版本等
+# sudo apt-get install package 安装包
+# sudo apt-get install package –reinstall 重新安装包
+# sudo apt-get -f install 强制安装
+# sudo apt-get remove package 删除包
+# sudo apt-get remove package –purge 删除包，包括删除配置文件等
+# sudo apt-get autoremove 自动删除不需要的包
+# sudo apt-get update 更新源
+# sudo apt-get upgrade 更新已安装的包
+# sudo apt-get dist-upgrade 升级系统
+# sudo apt-get dselect-upgrade 使用 dselect 升级
+# apt-cache depends package 了解使用依赖
+# apt-cache rdepends package 了解某个具体的依赖
+# sudo apt-get build-dep package 安装相关的编译环境
+# apt-get source package 下载该包的源代码
+# sudo apt-get clean && sudo apt-get autoclean 清理下载文件的存档
+# sudo apt-get check 检查是否有损坏的依赖
+#
+#
+# apt的配置文件
+#
+# /etc/apt/sources.list 设置软件包的获取来源
+# /etc/apt/apt.conf apt配置文件
+# /etc/apt/apt.conf.d apt的零碎配置文件
+# /etc/apt/preferences 版本参数
+# /var/cache/apt/archives/partial 存放正在下载的软件包
+# /var/cache/apt/archives 存放已经下载的软件包
+# /var/lib/apt/lists 存放已经下载的软件包详细信息
+# /var/lib/apt/lists/partial 存放正在下载的软件包详细信息
