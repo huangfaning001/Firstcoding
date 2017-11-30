@@ -143,3 +143,63 @@
 # /var/cache/apt/archives 存放已经下载的软件包
 # /var/lib/apt/lists 存放已经下载的软件包详细信息
 # /var/lib/apt/lists/partial 存放正在下载的软件包详细信息
+
+
+# date ： 用来显示或设定系统的日期和与时间
+#
+# date //显示当前日期
+# # 日期格式化
+# #       %Y     year
+# #       %m     month (01..12)
+# #       %d     day of month (e.g., 01)
+# #       %H     hour (00..23)
+# #       %I     hour (01..12)
+# #       %M     minute (00..59)
+# #       %S     second (00..60)
+# date +"%Y%m%d %H%M%S"
+# 223856
+# date +"%Y-%m-%d %H:%M:%S"
+#     2016-08-24 22:39:07
+#
+# date -s //设置当前时间，只有root权限才能设置，其他只能查看。
+# date -s 20061010 //设置成20061010，这样会把具体时间设置成空00:00:00
+# date -s 12:23:23 //设置具体时间，不会对日期做更改
+# date -s “12:12:23 2006-10-10″ //这样可以设置全部时间
+#
+# # 注意： 重新设置时间后需要将时间捅不到硬件时钟。方式如下：
+# hwclock -w
+#
+#
+# cal : 显示一个日历
+# cal  #  现实当前月份的日历
+# cal -y  # 显示当年的日历
+# cal 2016 #  # 显示指定年份的日历
+#
+# 设置时区
+# tzselect
+#
+#
+# 修改密码：
+# # 修改密码的命令
+# passwd # 默认修改当前用户的密码
+# passwd username # 修改指定用户的密码，需要管理员权限
+#
+#
+# 忘记密码
+# 开始时长按shift键，进入grub菜单-->  按字母e 进入编辑模式 --> 编辑内容--> 启动 进入但用户模式 ，重新设置用户密码，-->  按照F10重启 -- >  使用新密码进入系统
+#
+#
+#
+# 注销/重启/关机
+# logout  # 注销
+# reboot  # 重启系统： 需要管理员全新啊
+# shutdown # 关机： 需要管理员权限
+# shutdown -r now # 现在立即重启
+# shutdown -r +5  # 三分钟后重启
+# shutdown -r 12:12    #在12:12时将重启计算机
+#
+# shutdown -h now # 现在立即关机
+# shutdown -h +5  “The System will shutdown after 3 minutes”   # 提示使用者将在三分钟后关机
+# shutdown -h +5   #  5分钟后关机
+# shutdown -h 12:00  # 12点钟关机
+# shutdown -c   # 取消关机操作
