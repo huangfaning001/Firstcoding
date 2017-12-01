@@ -203,3 +203,89 @@
 # shutdown -h +5   #  5分钟后关机
 # shutdown -h 12:00  # 12点钟关机
 # shutdown -c   # 取消关机操作
+
+# cd  ： 切换目录
+# cd  # 回到当前用户的家目录
+# # ～  可用于表示用户家目录
+# cd  /etc # 切换到/etc目录
+#
+# cd - # 切换到上一次的目录
+#
+#
+# pwd ： 查看当前的工作路径
+#
+#
+# 创建目录：
+# # mkdir 目录名
+# mkdir my_dir
+#
+# # - p 参数 : 递归创建目录，用于同时创建多级目录
+# mkdir   a/b/c/d
+#
+#
+# 获取帮助
+#  -h  --help  info  man
+# man man  # 查看man命令的手册
+# man  cd
+# man  pwd
+# man 5 passwd
+# man -k passwd # 模糊查找
+# man -f  passwd  # 精确查找
+#
+# 创建文件
+#
+# touch ： 改变文件或目录的时间，文件不存在时会创建一个空文件。
+# touch file1 # file1 不存在时被创建
+# touch -c file1 # 不创建文件
+# touch -r ref_file file1  更新file1.txt的时间戳和ref+file相同
+# touch -t 201210120505.25 file1
+#
+# #  -t  time 使用指定的时间值 time 作为指定文件相应时间戳记的新值．此处的 # # time规定为如下形式的十进制数:
+# #  [[CC]YY]MMDDhhmm[.SS]
+# #   这里，CC为年数中的前两位，即”世纪数”；YY为年数的后两位，即某世纪中的年数．如果不给出CC的值，则touch   将把年数CCYY限定在1969--2068之内．MM为月数，DD为天将把年数CCYY限定在1969--2068之内．MM为月数，DD为天数，hh 为小时数(几点)，mm为分钟数，SS为秒数．此处秒的设定范围是0--61，这样可以处理闰秒．这些数字组成的时间是环境变量TZ指定的时区中的一个时 间．由于系统的限制，早于1970年1月1日的时间是错误的。
+#
+# 注意： 如果文件以 ”.“ 开头，则表示文件是隐藏文件。
+#
+#
+# 删除：
+# rm   ： 删除命令
+# rm -f  file1 # 强制删除文件
+# rm -r  a/b/file1  # 删除指定目录及其下的所有文件和目录
+# rm -rf  a/b/file1  #  强制删除指定目录及其下的所有文件和目录
+# # rm 命令太危险，不建议使用
+#
+#
+# mv  ： 移动或重命令文件或目录
+# mv
+# SOURCE
+# DEST  #
+#
+# mv
+# test.log
+# test.txt  # 文件改名
+# mv
+# test1.txt
+# dir1 /  # 移动文件
+#
+# mv
+# test1.txt
+# test2.tx
+# test3.tx
+# dir1 /  # 移动多个文件
+#
+#
+# cp ： 复制
+# cp SOURCE DEST # 复制文件
+# cp -i  SOURCE DEST  #   如果遇到需要覆盖的情况，则提示
+# cp -r  dir1  dir2  # 若给出的源文件是一目录文件，此时cp将递归复制该目录下所有的子目录和文件。此时目标文件必须为一个目录名
+# cp -p  file1 file2  #  此时cp除复制源文件的内容外，还将把其修改时间和访问权限也复制到新文件中。
+# cp -rp dir1  dir2
+#
+#
+# stat : 查看文件相信信息
+# stat filename
+# #  Access time(atime):是指取用文件的时间，所谓取用，常见的操作有：使用编辑器查看文件内容，使用cat命令显示文件内容，使用cp命令把该文件（即来源文件）复制成其他文件，或者在这个文件上运用grep sed more less tail head 等命令，凡是读取而不修改文件的操作，均衡改变文件的Access time.
+# #  Modify time(mtime)：是指修改文件内容的时间，只要文件内容有改动（如使用转向输出或转向附加的方式）或存盘的操作，就会改变文件的Modify time,平常我们使用ls –l查看文件时，显示的时间就是Modify time
+# #  Change time(ctime):是指文件属性或文件位置改动的时间，如使用chmod，chown,mv指令集使用ln做文件的硬是连接，就会改变文件的Change time.
+
+
