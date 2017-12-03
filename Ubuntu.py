@@ -313,3 +313,43 @@
 # -u  ：就是 uniq ，相同的数据中，仅出现一行代表；
 # -t  ：分隔符，默认是用 [tab] 键来分隔；
 # -k  ：以那个区间 (field) 来进行排序的意思
+
+# uniq ： 忽略或报告重复行
+# uniq [-icu]
+# 选项与参数：
+# -i   ：忽略大小写字符的不同；
+# -c  ：进行计数
+# -u  ：只显示唯一的行
+#
+# cut命令可以从一个文本文件或者文本流中提取文本列。
+# 选项与参数：
+# -d  ：后面接分隔字符。与 -f 一起使用；
+# -f  ：依据 -d 的分隔字符将一段信息分割成为数段，用 -f 取出第几段的意思；
+# -c  ：以字符 (characters) 的单位取出固定字符区间；
+#
+# tee ： 读取标准输入的数据，并将其内容输出成文件。
+# cat sec.log | tee file1  # 读取sec.log ，并生成file1文件
+# cat sec.log | tee - a file1  # 读取sec.log ，并追加，
+# cat sec.log | tee file1 file2
+#
+# history ： 查看执行过的命令。
+# history  # 显示最近1000条历史命令
+# history 5   # 显示最后5条命令
+# !number# number为history之后命令前的序号：执行该条命令
+# !cat # 执行最后一条以cat开头的命令
+#
+# more ：   查看文件内容
+#
+# less  ： 查看文件内容
+#
+# head ： 输出文件的开始的部分， 可以指定行数 , 默认显示10行
+# head -n 5 file
+#
+# tail  ：   查看文件尾部的内容。默认显示最后10行
+# tail file1
+# tail -n 5 file1
+# tail -f file1  # 动态监控文件
+#
+# which # 查找其他命令的位置
+# which ls
+
