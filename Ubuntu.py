@@ -443,3 +443,92 @@
 #
 # 有x权限后，就可以使用  ./a.py 的方式执行文件
 
+
+# chown ： 更改文件的所有者和所有组
+# chown root:root  file
+# chown root   file
+# chown :root   file
+#
+# 特殊权限
+#
+# SUID：    让一般用户在执行某些程序的时候，能够暂时具有该程序拥有者的权限，SUID对目录是无效的
+#
+# SGID ：  文件：如果SGID设置在二进制文件上，则不论用户是谁，在执行该程序的时候，它的有效用户组（effective
+# group）将会变成该程序的用户组所有者（group
+# id）；    目录：如果SGID是设置在某目录上，则在该目录内所建立的文件或目录的用户组，将会是该目录的用户组。  SGID多用在特定的多人团队的项目开发上，在系统中用得较少
+#
+# STICKY ： 只针对目录有效，在具有SBit的目录下，用户若在该目录下具有w及x权限，则当用户在该目录下建立文件或目录时，只有文件拥有者与root才有权力删除。
+#
+# rwsrw - r - -  表明有suid标识，
+# rwxrws - -- 表明有sgid标识，
+# rwxrw - rwt
+# 表明有stick标识，
+# 当设置了特别权限位时，如果原来这个位上有x，那么这个特殊标示就显示为小写字母s, s, t ，否者就显示为大写S, S, T，此时他们不生效。
+#
+# 用户和用户组
+#
+# linux使用文件保存用户信息 ：
+#
+# 文件
+# #      /etc/passwd 用户账户信息。
+# #       /etc/shadow 安全用户账户信息。
+# #       /etc/group 组账户信息。
+# #       /etc/gshadow 安全组账户信息。
+# #       /etc/default/useradd 账户创建的默认值。
+# #       /etc/skel/ 包含默认文件的目录。
+# #       /etc/login.defs Shadow 密码套件配置。
+#
+# useradd：  添加用户
+# # -c 备注 加上备注。并会将此备注文字加在/etc/passwd中的第5项字段中
+# #  -d 用户主文件夹。指定用户登录所进入的目录，并赋予用户对该目录的的完全控制权
+# #  -e 有效期限。指定帐号的有效期限。格式为YYYY-MM-DD，将存储在/etc/shadow
+# #  -f 缓冲天数。限定密码过期后多少天，将该用户帐号停用
+# #  -g 主要组。设置用户所属的主要组  www.cit.cn
+# #  -G 次要组。设置用户所属的次要组，可设置多组
+# # -M 强制不创建用户主文件夹
+# #  -m 强制建立用户主文件夹，并将/etc/skel/当中的文件复制到用户的根目录下
+# #  -p 密码。输入该帐号的密码
+# #  -s shell。用户登录所使用的shell
+# #  -u uid。指定帐号的标志符user id，简称uid
+#
+# useradd user1 # 添加用户 user1
+# useradd  -d /home/userTT user2
+#
+# userdel : 删除用户
+# userdel  user1  #
+# userdel -r user1
+#
+# #  -r, --remove   用户主目录中的文件将随用户主目录和用户邮箱一起删除。在其它文件系统中的文件必须手动搜索并删除。
+# #    -f, --force    此选项强制删除用户账户，甚至用户仍然在登录状态。它也强制删除用户的主目录和邮箱，即使其它用户也使用同一个主目录或邮箱不属于指定的用户
+#
+# usermod : 修改用户信息
+# #　-c<备注> 　修改用户帐号的备注文字。
+# #　-d登入目录> 　修改用户登入时的目录。
+# #　-e<有效期限> 　修改帐号的有效期限。
+# #　-f<缓冲天数> 　修改在密码过期后多少天即关闭该帐号。
+# #　-g<群组> 　修改用户所属的群组。
+# #　-G<群组> 　修改用户所属的附加群组。
+# #　-l<帐号名称> 　修改用户帐号名称。
+# #　-L 　锁定用户密码，使密码无效。
+# #　-s<shell> 　修改用户登入后所使用的shell。
+# #　-u<uid> 　修改用户ID。
+#
+#
+# #　-U 　解除密码锁定。
+#
+# usermod -G staff user2  # 将 newuser2 添加到组 staff 中
+# usermod -l newuser1 newuser  # 修改 newuser 的用户名为 newuser1
+# usermod -L newuser1  # 锁定账号 newuser1
+# usermod -U newuser1  # 解除对 newuser1 的锁定
+#
+#
+# groupadd : 添加组
+# groupadd group1
+# groupadd -g  1000 group1  # 指定gid
+#
+# groupdel ： 删除组
+# groupdel group1 # 删除组
+
+
+
+
