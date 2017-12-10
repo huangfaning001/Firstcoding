@@ -772,4 +772,10 @@ find  /etc -size +2M -a -size -10M
 find /home -name  “*.txt” -ok ls -l {} \;
 find /home -name  “*.txt” -ok rm {} \;
 
+df
+-T : 显示文件系统类型
+-h ： 以能显示的最大单位显示
+
+df -Th
+
 
