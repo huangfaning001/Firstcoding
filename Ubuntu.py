@@ -779,3 +779,11 @@ df
 df -Th
 
 
+du
+-s ： 如果后面是目录，只显示一层
+-h : 以能显示的最大单位显示
+
+du dirname # 显示dirname下所有目录及其子目录的大小
+
+du -sh dirname  显示dirname的大小
+
