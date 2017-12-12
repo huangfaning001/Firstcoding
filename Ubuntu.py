@@ -787,3 +787,23 @@ du dirname # 显示dirname下所有目录及其子目录的大小
 
 du -sh dirname  显示dirname的大小
 
+
+
+mount / umount 3 挂载和卸载设备
+mount # 查询挂在设备及属性
+
+# 挂载光盘
+mount -t iso9660 /dev/cerom /mnt
+mount /dev/sr0 /mnt  
+
+
+# 重新挂载设备
+mount -o remount,rw /mnt  # 重新挂载设备并设置rw属性
+
+# 挂载iso文件
+mount  a.iso -o loop /mnt 
+
+
+umount /mnt # 卸载设备
+umount -l /mnt # 强制卸载
+
