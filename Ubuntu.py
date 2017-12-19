@@ -967,4 +967,16 @@ RS                 控制记录分隔符
 # 使用printf替代print,可以让代码更加简洁，易读
 awk  -F ':'  '{printf("filename:%10s,linenumber:%s,columns:%s,linecontent:%s\n",FILENAME,NR,NF,$0)}' /etc/passwd
 
+ 
+
+进入vi的命令 
+vi filename :打开或新建文件，并将光标置于第一行首 
+vi +n filename ：打开文件，并将光标置于第n行首 
+vi + filename ：打开文件，并将光标置于最后一行首 
+vi +/pattern filename：打开文件，并将光标置于第一个与pattern匹配的串处 
+vi -r filename ：在上次正用vi编辑时发生系统崩溃，恢复filename 
+vi filename....filename ：打开多个文件，依次进行编辑 
+
+
+
 
