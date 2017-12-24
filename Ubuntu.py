@@ -1030,5 +1030,18 @@ nomagic：允许在搜索模式中，使用前面不带“\”的特殊字符
 nowrapscan：禁止vi在搜索到达文件两端时，又从另一端开始 
 mesg：允许vi显示其他用户用write写到自己终端上的信息 
 
+最后行方式命令 
+：n1,n2 co n3：将n1行到n2行之间的内容拷贝到第n3行下 
+：n1,n2 m n3：将n1行到n2行之间的内容移至到第n3行下 
+：n1,n2 d ：将n1行到n2行之间的内容删除 
+：w ：保存当前文件 
+：e filename：打开文件filename进行编辑 
+：x：保存当前文件并退出 
+：q：退出vi 
+：q!：不保存文件并退出vi 
+：!command：执行shell命令command 
+：n1,n2 w!command：将文件中n1行至n2行的内容作为command的输入并执行之，若不指定n1，n2，则表示将整个文件内容作为command的输入 
+：r!command：将命令command的输出结果放到当前行
+
 
 
